@@ -1,0 +1,49 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"6 D:\Embedded Class\Assignment_Answers\Traffic_control.X\main.c
+[v _init_config init_config `(v  1 s 1 init_config ]
+"11
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+"20
+[v _main main `(v  1 e 1 0 ]
+"340 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"20 D:\Embedded Class\Assignment_Answers\Traffic_control.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"45
+[v main@LED_38 LED `i  1 a 2 9 ]
+"28
+[v main@LED LED `i  1 a 2 7 ]
+"23
+[v main@direction direction `ui  1 s 2 direction ]
+"62
+} 0
+"6
+[v _init_config init_config `(v  1 s 1 init_config ]
+{
+"10
+} 0
+"11
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+{
+"13
+[v delay_ms@j j `ui  1 a 2 4 ]
+[v delay_ms@i i `ui  1 a 2 2 ]
+"11
+[v delay_ms@ms ms `ui  1 p 2 0 ]
+"18
+} 0

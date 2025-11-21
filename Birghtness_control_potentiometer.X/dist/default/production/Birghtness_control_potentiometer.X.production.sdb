@@ -1,0 +1,128 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"3 D:\Embedded Class\Assignment_Answers\Birghtness_control_potentiometer.X\adc.c
+[v _init_adc init_adc `(v  1 e 1 0 ]
+"12
+[v _read_adc read_adc `(us  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"7 D:\Embedded Class\Assignment_Answers\Birghtness_control_potentiometer.X\main.c
+[v _init_config init_config `(v  1 s 1 init_config ]
+"13
+[v _software_pwm software_pwm `(v  1 e 1 0 ]
+"30
+[v _main main `(v  1 e 1 0 ]
+"340 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2395
+[v _ADFM ADFM `VEb  1 e 0 @1279 ]
+"2404
+[v _ADON ADON `VEb  1 e 0 @248 ]
+"2572
+[v _GO GO `VEb  1 e 0 @250 ]
+"2749
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"3070
+[v _nDONE nDONE `VEb  1 e 0 @250 ]
+"30 D:\Embedded Class\Assignment_Answers\Birghtness_control_potentiometer.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"32
+[v main@adc_reg_value adc_reg_value `us  1 a 2 40 ]
+"40
+} 0
+"13
+[v _software_pwm software_pwm `(v  1 e 1 0 ]
+{
+[v software_pwm@duty_cycle duty_cycle `us  1 p 2 38 ]
+"15
+[v software_pwm@loop_count loop_count `us  1 s 2 loop_count ]
+"29
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 26 ]
+[v ___flge@ff2 ff2 `d  1 p 4 30 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 20 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 13 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 17 ]
+"8
+[v ___fldiv@a a `d  1 p 4 0 ]
+[v ___fldiv@b b `d  1 p 4 4 ]
+"185
+} 0
+"12 D:\Embedded Class\Assignment_Answers\Birghtness_control_potentiometer.X\adc.c
+[v _read_adc read_adc `(us  1 e 2 0 ]
+{
+[v read_adc@channel channel `uc  1 a 1 wreg ]
+"14
+[v read_adc@adc_reg_val adc_reg_val `us  1 a 2 3 ]
+"12
+[v read_adc@channel channel `uc  1 a 1 wreg ]
+"17
+[v read_adc@channel channel `uc  1 a 1 5 ]
+"27
+} 0
+"7 D:\Embedded Class\Assignment_Answers\Birghtness_control_potentiometer.X\main.c
+[v _init_config init_config `(v  1 s 1 init_config ]
+{
+"12
+} 0
+"3 D:\Embedded Class\Assignment_Answers\Birghtness_control_potentiometer.X\adc.c
+[v _init_adc init_adc `(v  1 e 1 0 ]
+{
+"10
+} 0

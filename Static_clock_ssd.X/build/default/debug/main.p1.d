@@ -1,0 +1,5 @@
+build/default/debug/main.p1:  \
+main.c  \
+ssd.h  \
+timers.h  \
+main.h 

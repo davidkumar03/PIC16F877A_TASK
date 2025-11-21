@@ -1,0 +1,499 @@
+Microchip MPLAB XC8 Compiler V2.41
+
+Linker command line:
+
+-W-3 \
+  --edf=C:\Program Files\Microchip\xc8\v2.41\pic\dat\20230208172133_en.msgs \
+  -cn -h+dist/default/production\ssd_eeprom_external.X.production.sym \
+  --cmf=dist/default/production\ssd_eeprom_external.X.production.cmf -z \
+  -Q16F877A -oC:\Users\ACER\AppData\Local\Temp\xcBsc8g.1\driver_tmp_3.o \
+  --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
+  -Mdist/default/production/ssd_eeprom_external.X.production.map \
+  --md=C:\Users\ACER\AppData\Local\Temp\xcBsc8g.1\driver_tmp_0.dat -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
+  -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
+  -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
+  -ABANK2=0110h-016Fh -ABANK3=0190h-01EFh \
+  -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
+  -AABS1=020h-07Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh -ASFR0=00h-01Fh \
+  -ASFR1=080h-09Fh -ASFR2=0100h-010Fh -ASFR3=0180h-018Fh \
+  -ACONFIG=02007h-02007h -DCONFIG=2 -AIDLOC=02000h-02003h -DIDLOC=2 \
+  -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
+  -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
+  -pfunctab=ENTRY -k \
+  C:\Users\ACER\AppData\Local\Temp\xcBsc8g.1\driver_tmp_12.o \
+  dist/default/production\ssd_eeprom_external.X.production.o 
+
+Object code version is 3.11
+
+Machine type is 16F877A
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\ACER\AppData\Local\Temp\xcBsc8g.1\driver_tmp_12.o
+                end_init                              0        0        3        0       0
+                config                             2007     2007        1        0       4
+dist/default/production\ssd_eeprom_external.X.production.o
+                cinit                               7E7      7E7       19      FCE       0
+                config                             2007     2007        1        0       4
+                text20                              40C      40C       25      818       0
+                text19                              4B8      4B8       36      970       0
+                text18                              332      332        6      664       0
+                text17                              36C      36C        D      6D8       0
+                text16                              3EB      3EB       21      7D6       0
+                text15                              338      338        9      670       0
+                text14                              341      341        9      682       0
+                text13                              34A      34A        B      694       0
+                text12                              355      355        B      6AA       0
+                text11                              45B      45B       2B      8B6       0
+                text10                              3AE      3AE       1E      75C       0
+                text9                               399      399       15      732       0
+                text8                               56C      56C       66      AD8       0
+                text7                               486      486       32      90C       0
+                text6                               360      360        C      6C0       0
+                text5                               3CC      3CC       1F      798       0
+                text4                               528      528       44      A50       0
+                text3                               4EE      4EE       3A      9DC       0
+                text2                               5D2      5D2       77      BA4       0
+                text1                               431      431       2A      862       0
+                maintext                            649      649      19E      C92       0
+                cstackBANK0                          20       20       22       20       1
+                cstackCOMMON                         70       70        E       70       1
+                inittext                            386      386       13      70C       0
+                dataBANK0                            42       42        D       20       1
+                bssBANK0                             4F       4F        7       20       1
+                idataBANK0                          379      379        D      6F2       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CODE           
+                end_init                              0        0        3         0
+                cinit                               7E7      7E7       19         0
+                text20                              40C      40C       25         0
+                text19                              4B8      4B8       36         0
+                text18                              332      332        6         0
+                text17                              36C      36C        D         0
+                text16                              3EB      3EB       21         0
+                text15                              338      338        9         0
+                text14                              341      341        9         0
+                text13                              34A      34A        B         0
+                text12                              355      355        B         0
+                text11                              45B      45B       2B         0
+                text10                              3AE      3AE       1E         0
+                text9                               399      399       15         0
+                text8                               56C      56C       66         0
+                text7                               486      486       32         0
+                text6                               360      360        C         0
+                text5                               3CC      3CC       1F         0
+                text4                               528      528       44         0
+                text3                               4EE      4EE       3A         0
+                text2                               5D2      5D2       77         0
+                text1                               431      431       2A         0
+                maintext                            649      649      19E         0
+                inittext                            386      386       13         0
+                idataBANK0                          379      379        D         0
+
+        CLASS   STRCODE        
+
+        CLASS   STRING         
+
+        CLASS   CONST          
+
+        CLASS   ENTRY          
+
+        CLASS   COMMON         
+                cstackCOMMON                         70       70        E         1
+
+        CLASS   BANK0          
+                cstackBANK0                          20       20       22         1
+                dataBANK0                            42       42        D         1
+                bssBANK0                             4F       4F        7         1
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               7E       7E        2         1
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   SFR2           
+
+        CLASS   SFR3           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         4
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+        CLASS   STACK          
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000003  000003         0       0  CODE        2
+                cstackBANK0                    000020  000036  000056        20       1  BANK0       1
+                cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
+                text18                         000332  000006  000338       664       0  CODE        2
+                text15                         000338  000009  000341       670       0  CODE        2
+                text14                         000341  000009  00034A       682       0  CODE        2
+                text13                         00034A  00000B  000355       694       0  CODE        2
+                text12                         000355  00000B  000360       6AA       0  CODE        2
+                text6                          000360  00000C  00036C       6C0       0  CODE        2
+                text17                         00036C  00000D  000379       6D8       0  CODE        2
+                idataBANK0                     000379  00000D  000386       6F2       0  CODE        2
+                inittext                       000386  000013  000399       70C       0  CODE        2
+                text9                          000399  000015  0003AE       732       0  CODE        2
+                text10                         0003AE  00001E  0003CC       75C       0  CODE        2
+                text5                          0003CC  00001F  0003EB       798       0  CODE        2
+                text16                         0003EB  000021  00040C       7D6       0  CODE        2
+                text20                         00040C  000025  000431       818       0  CODE        2
+                text1                          000431  00002A  00045B       862       0  CODE        2
+                text11                         00045B  00002B  000486       8B6       0  CODE        2
+                text7                          000486  000032  0004B8       90C       0  CODE        2
+                text19                         0004B8  000036  0004EE       970       0  CODE        2
+                text3                          0004EE  00003A  000528       9DC       0  CODE        2
+                text4                          000528  000044  00056C       A50       0  CODE        2
+                text8                          00056C  000066  0005D2       AD8       0  CODE        2
+                text2                          0005D2  000077  000649       BA4       0  CODE        2
+                maintext                       000649  00019E  0007E7       C92       0  CODE        2
+                cinit                          0007E7  000019  000800       FCE       0  CODE        2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            0056-006F             1A           1
+        BANK1            00A0-00EF             50           1
+        BANK2            0110-016F             60           1
+        BANK3            0190-01EF             60           1
+        CODE             0003-0331            32F           2
+                         0800-1FFF            800
+        CONST            0003-0331            100           2
+                         0800-1FFF            100
+        EEDATA           2100-21FF            100           2
+        ENTRY            0003-0331            100           2
+                         0800-1FFF            100
+        IDLOC            2000-2003              4           2
+        RAM              0056-006F             1A           1
+                         00A0-00EF             50
+                         0110-016F             60
+                         0190-01EF             60
+        SFR0             0000-001F             20           1
+        SFR1             0080-009F             20           1
+        SFR2             0100-010F             10           1
+        SFR3             0180-018F             10           1
+        STRCODE          0003-0331            32F           2
+                         0800-1FFF           1800
+        STRING           0003-0331            100           2
+                         0800-1FFF            100
+
+                                  Symbol Table
+
+?___lldiv                    cstackCOMMON 0070
+?___lwdiv                    cstackCOMMON 0070
+?___lwmod                    cstackCOMMON 0077
+?___wmul                     cstackCOMMON 0074
+_ACKDT                       (abs)        048D
+_ACKEN                       (abs)        048C
+_ACKSTAT                     (abs)        048E
+_PEN                         (abs)        048A
+_PORTA                       (abs)        0005
+_PORTB                       (abs)        0006
+_PORTD                       (abs)        0008
+_RCEN                        (abs)        048B
+_R_nW                        (abs)        04A2
+_SEN                         (abs)        0488
+_SSPADD                      (abs)        0093
+_SSPBUF                      (abs)        0013
+_SSPCON2                     (abs)        0091
+_SSPEN                       (abs)        00A5
+_SSPM3                       (abs)        00A3
+_TRISA                       (abs)        0085
+_TRISB                       (abs)        0086
+_TRISD                       (abs)        0088
+__H__absolute__              __absolute__ 0000
+__Habs1                      abs1         0000
+__Hbank0                     bank0        0000
+__Hbank1                     bank1        0000
+__Hbank2                     bank2        0000
+__Hbank3                     bank3        0000
+__HbssBANK0                  bssBANK0     0000
+__Hcinit                     cinit        0800
+__Hclrtext                   clrtext      0000
+__Hcode                      code         0000
+__Hcommon                    common       0000
+__Hconfig                    config       2008
+__HcstackBANK0               cstackBANK0  0000
+__HcstackCOMMON              cstackCOMMON 0000
+__HdataBANK0                 dataBANK0    0000
+__Heeprom_data               eeprom_data  0000
+__Hend_init                  end_init     0003
+__Hfunctab                   functab      0000
+__HidataBANK0                idataBANK0   0000
+__Hinit                      init         0000
+__Hinittext                  inittext     0000
+__Hintentry                  intentry     0000
+__Hmaintext                  maintext     0000
+__Hpowerup                   powerup      0000
+__Hram                       ram          0000
+__Hreset_vec                 reset_vec    0000
+__Hsfr0                      sfr0         0000
+__Hsfr1                      sfr1         0000
+__Hsfr2                      sfr2         0000
+__Hsfr3                      sfr3         0000
+__Hspace_0                   (abs)        0800
+__Hspace_1                   (abs)        007E
+__Hspace_2                   (abs)        0000
+__Hspace_3                   (abs)        0000
+__Hspace_4                   (abs)        400F
+__Hstack                     stack        0000
+__Hstrings                   strings      0000
+__Htext                      text         0000
+__L__absolute__              __absolute__ 0000
+__Labs1                      abs1         0000
+__Lbank0                     bank0        0000
+__Lbank1                     bank1        0000
+__Lbank2                     bank2        0000
+__Lbank3                     bank3        0000
+__LbssBANK0                  bssBANK0     0000
+__Lcinit                     cinit        07E7
+__Lclrtext                   clrtext      0000
+__Lcode                      code         0000
+__Lcommon                    common       0000
+__Lconfig                    config       0000
+__LcstackBANK0               cstackBANK0  0000
+__LcstackCOMMON              cstackCOMMON 0000
+__LdataBANK0                 dataBANK0    0000
+__Leeprom_data               eeprom_data  0000
+__Lend_init                  end_init     0000
+__Lfunctab                   functab      0000
+__LidataBANK0                idataBANK0   0000
+__Linit                      init         0000
+__Linittext                  inittext     0000
+__Lintentry                  intentry     0000
+__Lmaintext                  maintext     0000
+__Lpowerup                   powerup      0000
+__Lram                       ram          0000
+__Lreset_vec                 reset_vec    0000
+__Lsfr0                      sfr0         0000
+__Lsfr1                      sfr1         0000
+__Lsfr2                      sfr2         0000
+__Lsfr3                      sfr3         0000
+__Lspace_0                   (abs)        0000
+__Lspace_1                   (abs)        0000
+__Lspace_2                   (abs)        0000
+__Lspace_3                   (abs)        0000
+__Lspace_4                   (abs)        0000
+__Lstack                     stack        0000
+__Lstrings                   strings      0000
+__Ltext                      text         0000
+__S0                         (abs)        0800
+__S1                         (abs)        007E
+__S3                         (abs)        0000
+___int_sp                    stack        0000
+___latbits                   (abs)        0002
+___lldiv                     text8        056C
+___lldiv@counter             cstackCOMMON 007D
+___lldiv@dividend            cstackCOMMON 0074
+___lldiv@divisor             cstackCOMMON 0070
+___lldiv@quotient            cstackCOMMON 0079
+___lwdiv                     text4        0528
+___lwdiv@counter             cstackCOMMON 0076
+___lwdiv@dividend            cstackCOMMON 0072
+___lwdiv@divisor             cstackCOMMON 0070
+___lwdiv@quotient            cstackCOMMON 0074
+___lwmod                     text3        04EE
+___lwmod@counter             cstackCOMMON 007B
+___lwmod@dividend            cstackCOMMON 0079
+___lwmod@divisor             cstackCOMMON 0077
+___sp                        stack        0000
+___stackhi                   (abs)        0000
+___stacklo                   (abs)        0000
+___wmul                      text20       040C
+___wmul@multiplicand         cstackCOMMON 0076
+___wmul@multiplier           cstackCOMMON 0074
+___wmul@product              cstackCOMMON 0078
+__end_of___lldiv             text8        05D2
+__end_of___lwdiv             text4        056C
+__end_of___lwmod             text3        0528
+__end_of___wmul              text20       0431
+__end_of__initialization     cinit        07FC
+__end_of_display             text19       04EE
+__end_of_i2c_read            text16       040C
+__end_of_i2c_rep_start       text13       0355
+__end_of_i2c_start           text15       0341
+__end_of_i2c_stop            text14       034A
+__end_of_i2c_wait_for_idle   text17       0379
+__end_of_i2c_write           text12       0360
+__end_of_init_config         text5        03EB
+__end_of_init_digital_keypad text18       0338
+__end_of_init_eeprom         text9        03AE
+__end_of_init_i2c            text7        04B8
+__end_of_init_ssd            text6        036C
+__end_of_main                maintext     07E7
+__end_of_memory_write        text2        0649
+__end_of_read_digital_keypad text1        045B
+__end_of_read_eeprom         text11       0486
+__end_of_write_eeprom        text10       03CC
+__initialization             cinit        07E7
+__pbssBANK0                  bssBANK0     004F
+__pcstackBANK0               cstackBANK0  0020
+__pcstackCOMMON              cstackCOMMON 0070
+__pdataBANK0                 dataBANK0    0042
+__pidataBANK0                idataBANK0   0379
+__pmaintext                  maintext     0649
+__ptext1                     text1        0431
+__ptext10                    text10       03AE
+__ptext11                    text11       045B
+__ptext12                    text12       0355
+__ptext13                    text13       034A
+__ptext14                    text14       0341
+__ptext15                    text15       0338
+__ptext16                    text16       03EB
+__ptext17                    text17       036C
+__ptext18                    text18       0332
+__ptext19                    text19       04B8
+__ptext2                     text2        05D2
+__ptext20                    text20       040C
+__ptext3                     text3        04EE
+__ptext4                     text4        0528
+__ptext5                     text5        03CC
+__ptext6                     text6        0360
+__ptext7                     text7        0486
+__ptext8                     text8        056C
+__ptext9                     text9        0399
+_display                     text19       04B8
+_i2c_read                    text16       03EB
+_i2c_rep_start               text13       034A
+_i2c_start                   text15       0338
+_i2c_stop                    text14       0341
+_i2c_wait_for_idle           text17       036C
+_i2c_write                   text12       0355
+_init_config                 text5        03CC
+_init_digital_keypad         text18       0332
+_init_eeprom                 text9        0399
+_init_i2c                    text7        0486
+_init_ssd                    text6        0360
+_main                        maintext     0649
+_memory_write                text2        05D2
+_read_digital_keypad         text1        0431
+_read_eeprom                 text11       045B
+_write_eeprom                text10       03AE
+btemp                        (abs)        007E
+display@data                 cstackCOMMON 0073
+display@digit                cstackCOMMON 0074
+display@wait                 cstackCOMMON 0071
+end_of_initialization        cinit        07FC
+i2c_read@ack                 cstackCOMMON 0070
+i2c_read@data                cstackCOMMON 0071
+i2c_write@data               cstackCOMMON 0070
+init_eeprom@dummy            cstackBANK0  0020
+init_fetch0                  inittext     0386
+init_i2c@baud                cstackBANK0  0020
+init_ram0                    inittext     038A
+intlevel0                    functab      0000
+intlevel1                    functab      0000
+intlevel2                    functab      0000
+intlevel3                    functab      0000
+intlevel4                    functab      0000
+intlevel5                    functab      0000
+main@F882                    dataBANK0    0042
+main@count                   bssBANK0     0051
+main@digit                   cstackBANK0  0034
+main@flag                    bssBANK0     004F
+main@key1                    bssBANK0     0055
+main@key2                    bssBANK0     0054
+main@pre_key1                dataBANK0    004E
+main@pre_key2                dataBANK0    004D
+main@press_duration          bssBANK0     0053
+main@ssd                     cstackBANK0  003E
+memory_write@count           cstackBANK0  0020
+read_digital_keypad@mode     cstackCOMMON 0071
+read_digital_keypad@once     dataBANK0    004C
+read_eeprom@addr             cstackCOMMON 0072
+read_eeprom@data             cstackCOMMON 0073
+reset_vec                    reset_vec    0000
+start                        init         0000
+start_initialization         cinit        07E7
+write_eeprom@addr            cstackCOMMON 007D
+write_eeprom@data            cstackCOMMON 007C
+wtemp0                       (abs)        007E
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+ssd.c
+		_init_ssd      		CODE           	0360	0000	12
+		_display       		CODE           	04B8	0000	54
+
+ssd.c estimated size: 66
+
+digital_keypad.c
+		_init_digital_keypad		CODE           	0332	0000	6
+		_read_digital_keypad		CODE           	0431	0000	42
+
+digital_keypad.c estimated size: 48
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul16.c
+		___wmul        		CODE           	040C	0000	37
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul16.c estimated size: 37
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+		___lwdiv       		CODE           	0528	0000	68
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c estimated size: 68
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
+		___lldiv       		CODE           	056C	0000	102
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c estimated size: 102
+
+i2c.c
+		_i2c_start     		CODE           	0338	0000	9
+		_i2c_rep_start 		CODE           	034A	0000	11
+		_i2c_write     		CODE           	0355	0000	11
+		_i2c_stop      		CODE           	0341	0000	9
+		_i2c_read      		CODE           	03EB	0000	33
+		_init_i2c      		CODE           	0486	0000	50
+		_i2c_wait_for_idle		CODE           	036C	0000	13
+
+i2c.c estimated size: 136
+
+ds1307.c
+		_init_eeprom   		CODE           	0399	0000	21
+		_read_eeprom   		CODE           	045B	0000	43
+		_write_eeprom  		CODE           	03AE	0000	30
+
+ds1307.c estimated size: 94
+
+shared
+		__initialization		CODE           	07E7	0000	21
+
+shared estimated size: 21
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwmod.c
+		___lwmod       		CODE           	04EE	0000	58
+
+C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwmod.c estimated size: 58
+
+main.c
+		_main          		CODE           	0649	0000	414
+		_memory_write  		CODE           	05D2	0000	119
+		_init_config   		CODE           	03CC	0000	31
+
+main.c estimated size: 564
+

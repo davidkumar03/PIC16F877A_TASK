@@ -1,0 +1,1110 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                               Mon Mar 10 18:56:19 2025
+
+Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
+     1                           	processor	16F877A
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataCOMMON,global,class=CODE,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    15                           	dabs	1,0x7E,2
+    16     0000                     
+    17                           ; Version 2.20
+    18                           ; Generated 12/02/2020 GMT
+    19                           ; 
+    20                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    21                           ; All rights reserved.
+    22                           ; 
+    23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    24                           ; 
+    25                           ; Redistribution and use in source and binary forms, with or without modification, are
+    26                           ; permitted provided that the following conditions are met:
+    27                           ; 
+    28                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    29                           ;        conditions and the following disclaimer.
+    30                           ; 
+    31                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    32                           ;        of conditions and the following disclaimer in the documentation and/or other
+    33                           ;        materials provided with the distribution.
+    34                           ; 
+    35                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    36                           ;        software without specific prior written permission.
+    37                           ; 
+    38                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    39                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    40                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    41                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    42                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    43                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    44                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    45                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    46                           ; 
+    47                           ; 
+    48                           ; Code-generator required, PIC16F877A Definitions
+    49                           ; 
+    50                           ; SFR Addresses
+    51     0000                     	;# 
+    52     0001                     	;# 
+    53     0002                     	;# 
+    54     0003                     	;# 
+    55     0004                     	;# 
+    56     0005                     	;# 
+    57     0006                     	;# 
+    58     0007                     	;# 
+    59     0008                     	;# 
+    60     0009                     	;# 
+    61     000A                     	;# 
+    62     000B                     	;# 
+    63     000C                     	;# 
+    64     000D                     	;# 
+    65     000E                     	;# 
+    66     000E                     	;# 
+    67     000F                     	;# 
+    68     0010                     	;# 
+    69     0011                     	;# 
+    70     0012                     	;# 
+    71     0013                     	;# 
+    72     0014                     	;# 
+    73     0015                     	;# 
+    74     0015                     	;# 
+    75     0016                     	;# 
+    76     0017                     	;# 
+    77     0018                     	;# 
+    78     0019                     	;# 
+    79     001A                     	;# 
+    80     001B                     	;# 
+    81     001B                     	;# 
+    82     001C                     	;# 
+    83     001D                     	;# 
+    84     001E                     	;# 
+    85     001F                     	;# 
+    86     0081                     	;# 
+    87     0085                     	;# 
+    88     0086                     	;# 
+    89     0087                     	;# 
+    90     0088                     	;# 
+    91     0089                     	;# 
+    92     008C                     	;# 
+    93     008D                     	;# 
+    94     008E                     	;# 
+    95     0091                     	;# 
+    96     0092                     	;# 
+    97     0093                     	;# 
+    98     0094                     	;# 
+    99     0098                     	;# 
+   100     0099                     	;# 
+   101     009C                     	;# 
+   102     009D                     	;# 
+   103     009E                     	;# 
+   104     009F                     	;# 
+   105     010C                     	;# 
+   106     010D                     	;# 
+   107     010E                     	;# 
+   108     010F                     	;# 
+   109     018C                     	;# 
+   110     018D                     	;# 
+   111     0000                     	;# 
+   112     0001                     	;# 
+   113     0002                     	;# 
+   114     0003                     	;# 
+   115     0004                     	;# 
+   116     0005                     	;# 
+   117     0006                     	;# 
+   118     0007                     	;# 
+   119     0008                     	;# 
+   120     0009                     	;# 
+   121     000A                     	;# 
+   122     000B                     	;# 
+   123     000C                     	;# 
+   124     000D                     	;# 
+   125     000E                     	;# 
+   126     000E                     	;# 
+   127     000F                     	;# 
+   128     0010                     	;# 
+   129     0011                     	;# 
+   130     0012                     	;# 
+   131     0013                     	;# 
+   132     0014                     	;# 
+   133     0015                     	;# 
+   134     0015                     	;# 
+   135     0016                     	;# 
+   136     0017                     	;# 
+   137     0018                     	;# 
+   138     0019                     	;# 
+   139     001A                     	;# 
+   140     001B                     	;# 
+   141     001B                     	;# 
+   142     001C                     	;# 
+   143     001D                     	;# 
+   144     001E                     	;# 
+   145     001F                     	;# 
+   146     0081                     	;# 
+   147     0085                     	;# 
+   148     0086                     	;# 
+   149     0087                     	;# 
+   150     0088                     	;# 
+   151     0089                     	;# 
+   152     008C                     	;# 
+   153     008D                     	;# 
+   154     008E                     	;# 
+   155     0091                     	;# 
+   156     0092                     	;# 
+   157     0093                     	;# 
+   158     0094                     	;# 
+   159     0098                     	;# 
+   160     0099                     	;# 
+   161     009C                     	;# 
+   162     009D                     	;# 
+   163     009E                     	;# 
+   164     009F                     	;# 
+   165     010C                     	;# 
+   166     010D                     	;# 
+   167     010E                     	;# 
+   168     010F                     	;# 
+   169     018C                     	;# 
+   170     018D                     	;# 
+   171     0000                     	;# 
+   172     0001                     	;# 
+   173     0002                     	;# 
+   174     0003                     	;# 
+   175     0004                     	;# 
+   176     0005                     	;# 
+   177     0006                     	;# 
+   178     0007                     	;# 
+   179     0008                     	;# 
+   180     0009                     	;# 
+   181     000A                     	;# 
+   182     000B                     	;# 
+   183     000C                     	;# 
+   184     000D                     	;# 
+   185     000E                     	;# 
+   186     000E                     	;# 
+   187     000F                     	;# 
+   188     0010                     	;# 
+   189     0011                     	;# 
+   190     0012                     	;# 
+   191     0013                     	;# 
+   192     0014                     	;# 
+   193     0015                     	;# 
+   194     0015                     	;# 
+   195     0016                     	;# 
+   196     0017                     	;# 
+   197     0018                     	;# 
+   198     0019                     	;# 
+   199     001A                     	;# 
+   200     001B                     	;# 
+   201     001B                     	;# 
+   202     001C                     	;# 
+   203     001D                     	;# 
+   204     001E                     	;# 
+   205     001F                     	;# 
+   206     0081                     	;# 
+   207     0085                     	;# 
+   208     0086                     	;# 
+   209     0087                     	;# 
+   210     0088                     	;# 
+   211     0089                     	;# 
+   212     008C                     	;# 
+   213     008D                     	;# 
+   214     008E                     	;# 
+   215     0091                     	;# 
+   216     0092                     	;# 
+   217     0093                     	;# 
+   218     0094                     	;# 
+   219     0098                     	;# 
+   220     0099                     	;# 
+   221     009C                     	;# 
+   222     009D                     	;# 
+   223     009E                     	;# 
+   224     009F                     	;# 
+   225     010C                     	;# 
+   226     010D                     	;# 
+   227     010E                     	;# 
+   228     010F                     	;# 
+   229     018C                     	;# 
+   230     018D                     	;# 
+   231                           
+   232                           	psect	idataCOMMON
+   233     06E0                     __pidataCOMMON:
+   234                           
+   235                           ;initializer for read_digital_keypad@once
+   236     06E0  3401               	retlw	1
+   237     0006                     _PORTB	set	6
+   238     0008                     _PORTD	set	8
+   239     0086                     _TRISB	set	134
+   240     0088                     _TRISD	set	136
+   241                           
+   242                           	psect	cinit
+   243     07F0                     start_initialization:	
+   244                           ; #config settings
+   245                           
+   246     07F0                     __initialization:
+   247                           
+   248                           ; Initialize objects allocated to COMMON
+   249     07F0  120A  118A  26E0  120A  118A  	fcall	__pidataCOMMON	;fetch initializer
+   250     07F5  00FA               	movwf	__pdataCOMMON& (0+127)
+   251                           
+   252                           ; Clear objects allocated to COMMON
+   253     07F6  01F0               	clrf	__pbssCOMMON& (0+127)
+   254     07F7  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   255     07F8  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+   256     07F9  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+   257     07FA  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+   258     07FB  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
+   259     07FC                     end_of_initialization:	
+   260                           ;End of C runtime variable initialization code
+   261                           
+   262     07FC                     __end_of__initialization:
+   263     07FC  0183               	clrf	3
+   264     07FD  120A  118A  2EF3   	ljmp	_main	;jump to C main() function
+   265                           
+   266                           	psect	bssCOMMON
+   267     0070                     __pbssCOMMON:
+   268     0070                     direction_control@delay:
+   269     0070                     	ds	4
+   270     0074                     direction_control@i:
+   271     0074                     	ds	2
+   272                           
+   273                           	psect	dataCOMMON
+   274     007A                     __pdataCOMMON:
+   275     007A                     read_digital_keypad@once:
+   276     007A                     	ds	1
+   277                           
+   278                           	psect	cstackCOMMON
+   279     0076                     __pcstackCOMMON:
+   280     0076                     ?_init_digital_keypad:
+   281     0076                     ??_init_digital_keypad:	
+   282                           ; 1 bytes @ 0x0
+   283                           
+   284     0076                     ?_read_digital_keypad:	
+   285                           ; 1 bytes @ 0x0
+   286                           
+   287     0076                     ??_read_digital_keypad:	
+   288                           ; 1 bytes @ 0x0
+   289                           
+   290     0076                     ?_direction_control:	
+   291                           ; 1 bytes @ 0x0
+   292                           
+   293     0076                     ??_direction_control:	
+   294                           ; 1 bytes @ 0x0
+   295                           
+   296     0076                     ?_init_config:	
+   297                           ; 1 bytes @ 0x0
+   298                           
+   299     0076                     ??_init_config:	
+   300                           ; 1 bytes @ 0x0
+   301                           
+   302     0076                     ?_main:	
+   303                           ; 1 bytes @ 0x0
+   304                           
+   305                           
+   306                           ; 1 bytes @ 0x0
+   307     0076                     	ds	1
+   308     0077                     direction_control@pre_key:
+   309     0077                     read_digital_keypad@mode:	
+   310                           ; 1 bytes @ 0x1
+   311                           
+   312                           
+   313                           ; 1 bytes @ 0x1
+   314     0077                     	ds	1
+   315     0078                     ??_main:
+   316     0078                     main@pre_key:	
+   317                           ; 1 bytes @ 0x2
+   318                           
+   319                           
+   320                           ; 1 bytes @ 0x2
+   321     0078                     	ds	1
+   322     0079                     main@key:
+   323                           
+   324                           ; 1 bytes @ 0x3
+   325     0079                     	ds	1
+   326                           
+   327                           	psect	maintext
+   328     06F3                     __pmaintext:	
+   329 ;;
+   330 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   331 ;;
+   332 ;; *************** function _main *****************
+   333 ;; Defined at:
+   334 ;;		line 14 in file "main.c"
+   335 ;; Parameters:    Size  Location     Type
+   336 ;;		None
+   337 ;; Auto vars:     Size  Location     Type
+   338 ;;  key             1    3[COMMON] unsigned char 
+   339 ;;  pre_key         1    2[COMMON] unsigned char 
+   340 ;; Return value:  Size  Location     Type
+   341 ;;                  1    wreg      void 
+   342 ;; Registers used:
+   343 ;;		wreg, status,2, status,0, pclath, cstack
+   344 ;; Tracked objects:
+   345 ;;		On entry : B00/0
+   346 ;;		On exit  : 0/0
+   347 ;;		Unchanged: 0/0
+   348 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   349 ;;      Params:         0       0       0       0       0
+   350 ;;      Locals:         2       0       0       0       0
+   351 ;;      Temps:          0       0       0       0       0
+   352 ;;      Totals:         2       0       0       0       0
+   353 ;;Total ram usage:        2 bytes
+   354 ;; Hardware stack levels required when called: 2
+   355 ;; This function calls:
+   356 ;;		_direction_control
+   357 ;;		_init_config
+   358 ;;		_read_digital_keypad
+   359 ;; This function is called by:
+   360 ;;		Startup code after reset
+   361 ;; This function uses a non-reentrant model
+   362 ;;
+   363                           
+   364     06F3                     _main:	
+   365                           ;psect for function _main
+   366                           
+   367     06F3                     l723:	
+   368                           ;incstack = 0
+   369                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   370                           
+   371                           
+   372                           ;main.c: 16:             pre_key=key;
+   373     06F3  120A  118A  26E7  120A  118A  	fcall	_init_config
+   374     06F8                     l18:	
+   375                           ;main.c: 17:         };main.c: 18:         direction_control(pre_key);
+   376                           
+   377                           
+   378                           ;main.c: 19:     };main.c: 20: }
+   379     06F8  3001               	movlw	1
+   380     06F9  120A  118A  2711  120A  118A  	fcall	_read_digital_keypad
+   381     06FE  00F9               	movwf	main@key
+   382     06FF                     l725:
+   383                           
+   384                           ;main.c: 21:     void direction_control(unsigned char pre_key)
+   385     06FF  303F               	movlw	63
+   386     0700  0679               	xorwf	main@key,w
+   387     0701  1903               	btfsc	3,2
+   388     0702  2F04               	goto	u181
+   389     0703  2F05               	goto	u180
+   390     0704                     u181:
+   391     0704  2F07               	goto	l729
+   392     0705                     u180:
+   393     0705                     l727:
+   394                           
+   395                           ;main.c: 22:     {;main.c: 23:         static unsigned int i=0;
+   396     0705  0879               	movf	main@key,w
+   397     0706  00F8               	movwf	main@pre_key
+   398     0707                     l729:
+   399                           
+   400                           ;main.c: 25:         if(delay++ == 10000)
+   401     0707  0878               	movf	main@pre_key,w
+   402     0708  120A  118A  273B  120A  118A  	fcall	_direction_control
+   403     070D  2EF8               	goto	l18
+   404     070E  120A  118A  2800   	ljmp	start
+   405     0711                     __end_of_main:
+   406                           
+   407                           	psect	text1
+   408     0711                     __ptext1:	
+   409 ;; *************** function _read_digital_keypad *****************
+   410 ;; Defined at:
+   411 ;;		line 10 in file "digital_keypad.c"
+   412 ;; Parameters:    Size  Location     Type
+   413 ;;  mode            1    wreg     unsigned char 
+   414 ;; Auto vars:     Size  Location     Type
+   415 ;;  mode            1    1[COMMON] unsigned char 
+   416 ;; Return value:  Size  Location     Type
+   417 ;;                  1    wreg      unsigned char 
+   418 ;; Registers used:
+   419 ;;		wreg, status,2, status,0
+   420 ;; Tracked objects:
+   421 ;;		On entry : 0/0
+   422 ;;		On exit  : 0/0
+   423 ;;		Unchanged: 0/0
+   424 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   425 ;;      Params:         0       0       0       0       0
+   426 ;;      Locals:         1       0       0       0       0
+   427 ;;      Temps:          1       0       0       0       0
+   428 ;;      Totals:         2       0       0       0       0
+   429 ;;Total ram usage:        2 bytes
+   430 ;; Hardware stack levels used: 1
+   431 ;; This function calls:
+   432 ;;		Nothing
+   433 ;; This function is called by:
+   434 ;;		_main
+   435 ;; This function uses a non-reentrant model
+   436 ;;
+   437                           
+   438     0711                     _read_digital_keypad:	
+   439                           ;psect for function _read_digital_keypad
+   440                           
+   441                           
+   442                           ;incstack = 0
+   443                           ; Regs used in _read_digital_keypad: [wreg+status,2+status,0]
+   444                           ;read_digital_keypad@mode stored from wreg
+   445     0711  00F7               	movwf	read_digital_keypad@mode
+   446     0712                     l655:
+   447                           
+   448                           ;digital_keypad.c: 10: unsigned char read_digital_keypad(unsigned char mode);digital_key
+      +                          pad.c: 11: {;digital_keypad.c: 12:     static unsigned char once = 1;;digital_keypad.c: 
+      +                          14:     if (mode == 0)
+   449     0712  0877               	movf	read_digital_keypad@mode,w
+   450     0713  1D03               	btfss	3,2
+   451     0714  2F16               	goto	u11
+   452     0715  2F17               	goto	u10
+   453     0716                     u11:
+   454     0716  2F1C               	goto	l663
+   455     0717                     u10:
+   456     0717                     l657:
+   457                           
+   458                           ;digital_keypad.c: 15:     {;digital_keypad.c: 16:         return PORTB & 0x3F;
+   459     0717  1283               	bcf	3,5	;RP0=0, select bank0
+   460     0718  1303               	bcf	3,6	;RP1=0, select bank0
+   461     0719  0806               	movf	6,w	;volatile
+   462     071A  393F               	andlw	63
+   463     071B  2F3A               	goto	l53
+   464     071C                     l663:
+   465                           
+   466                           ;digital_keypad.c: 19:     {;digital_keypad.c: 20:         if (((PORTB & 0x3F) != 0x3F) 
+      +                          && once)
+   467     071C  303F               	movlw	63
+   468     071D  1283               	bcf	3,5	;RP0=0, select bank0
+   469     071E  1303               	bcf	3,6	;RP1=0, select bank0
+   470     071F  0506               	andwf	6,w	;volatile
+   471     0720  00F6               	movwf	??_read_digital_keypad
+   472     0721  303F               	movlw	63
+   473     0722  0676               	xorwf	??_read_digital_keypad,w
+   474     0723  1903               	btfsc	3,2
+   475     0724  2F26               	goto	u21
+   476     0725  2F27               	goto	u20
+   477     0726                     u21:
+   478     0726  2F2E               	goto	l675
+   479     0727                     u20:
+   480     0727                     l665:
+   481     0727  087A               	movf	read_digital_keypad@once,w
+   482     0728  1903               	btfsc	3,2
+   483     0729  2F2B               	goto	u31
+   484     072A  2F2C               	goto	u30
+   485     072B                     u31:
+   486     072B  2F2E               	goto	l675
+   487     072C                     u30:
+   488     072C                     l667:
+   489                           
+   490                           ;digital_keypad.c: 21:         {;digital_keypad.c: 22:             once = 0;
+   491     072C  01FA               	clrf	read_digital_keypad@once
+   492     072D  2F17               	goto	l657
+   493     072E                     l675:
+   494     072E  303F               	movlw	63
+   495     072F  0506               	andwf	6,w	;volatile
+   496     0730  00F6               	movwf	??_read_digital_keypad
+   497     0731  303F               	movlw	63
+   498     0732  0676               	xorwf	??_read_digital_keypad,w
+   499     0733  1D03               	btfss	3,2
+   500     0734  2F36               	goto	u41
+   501     0735  2F37               	goto	u40
+   502     0736                     u41:
+   503     0736  2F39               	goto	l679
+   504     0737                     u40:
+   505     0737                     l677:
+   506                           
+   507                           ;digital_keypad.c: 27:         {;digital_keypad.c: 28:             once = 1;
+   508     0737  01FA               	clrf	read_digital_keypad@once
+   509     0738  0AFA               	incf	read_digital_keypad@once,f
+   510     0739                     l679:
+   511                           
+   512                           ;digital_keypad.c: 32:     return 0x3F;
+   513     0739  303F               	movlw	63
+   514     073A                     l53:
+   515     073A  0008               	return
+   516     073B                     __end_of_read_digital_keypad:
+   517                           
+   518                           	psect	text2
+   519     06E7                     __ptext2:	
+   520 ;; *************** function _init_config *****************
+   521 ;; Defined at:
+   522 ;;		line 7 in file "main.c"
+   523 ;; Parameters:    Size  Location     Type
+   524 ;;		None
+   525 ;; Auto vars:     Size  Location     Type
+   526 ;;		None
+   527 ;; Return value:  Size  Location     Type
+   528 ;;                  1    wreg      void 
+   529 ;; Registers used:
+   530 ;;		wreg, status,2, status,0, pclath, cstack
+   531 ;; Tracked objects:
+   532 ;;		On entry : 0/0
+   533 ;;		On exit  : 0/0
+   534 ;;		Unchanged: 0/0
+   535 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   536 ;;      Params:         0       0       0       0       0
+   537 ;;      Locals:         0       0       0       0       0
+   538 ;;      Temps:          0       0       0       0       0
+   539 ;;      Totals:         0       0       0       0       0
+   540 ;;Total ram usage:        0 bytes
+   541 ;; Hardware stack levels used: 1
+   542 ;; Hardware stack levels required when called: 1
+   543 ;; This function calls:
+   544 ;;		_init_digital_keypad
+   545 ;; This function is called by:
+   546 ;;		_main
+   547 ;; This function uses a non-reentrant model
+   548 ;;
+   549                           
+   550     06E7                     _init_config:	
+   551                           ;psect for function _init_config
+   552                           
+   553     06E7                     l651:	
+   554                           ;incstack = 0
+   555                           ; Regs used in _init_config: [wreg+status,2+status,0+pclath+cstack]
+   556                           
+   557                           
+   558                           ;main.c: 9:     init_config();
+   559     06E7  1283               	bcf	3,5	;RP0=0, select bank0
+   560     06E8  1303               	bcf	3,6	;RP1=0, select bank0
+   561     06E9  0188               	clrf	8	;volatile
+   562                           
+   563                           ;main.c: 10:     unsigned char key,pre_key;
+   564     06EA  1683               	bsf	3,5	;RP0=1, select bank1
+   565     06EB  1303               	bcf	3,6	;RP1=0, select bank1
+   566     06EC  0188               	clrf	8	;volatile
+   567     06ED                     l653:
+   568                           
+   569                           ;main.c: 11:     while(1)
+   570     06ED  120A  118A  26E1  120A  118A  	fcall	_init_digital_keypad
+   571     06F2                     l13:
+   572     06F2  0008               	return
+   573     06F3                     __end_of_init_config:
+   574                           
+   575                           	psect	text3
+   576     06E1                     __ptext3:	
+   577 ;; *************** function _init_digital_keypad *****************
+   578 ;; Defined at:
+   579 ;;		line 4 in file "digital_keypad.c"
+   580 ;; Parameters:    Size  Location     Type
+   581 ;;		None
+   582 ;; Auto vars:     Size  Location     Type
+   583 ;;		None
+   584 ;; Return value:  Size  Location     Type
+   585 ;;                  1    wreg      void 
+   586 ;; Registers used:
+   587 ;;		wreg, status,2
+   588 ;; Tracked objects:
+   589 ;;		On entry : 0/0
+   590 ;;		On exit  : 0/0
+   591 ;;		Unchanged: 0/0
+   592 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   593 ;;      Params:         0       0       0       0       0
+   594 ;;      Locals:         0       0       0       0       0
+   595 ;;      Temps:          0       0       0       0       0
+   596 ;;      Totals:         0       0       0       0       0
+   597 ;;Total ram usage:        0 bytes
+   598 ;; Hardware stack levels used: 1
+   599 ;; This function calls:
+   600 ;;		Nothing
+   601 ;; This function is called by:
+   602 ;;		_init_config
+   603 ;; This function uses a non-reentrant model
+   604 ;;
+   605                           
+   606     06E1                     _init_digital_keypad:	
+   607                           ;psect for function _init_digital_keypad
+   608                           
+   609     06E1                     l649:	
+   610                           ;incstack = 0
+   611                           ; Regs used in _init_digital_keypad: [wreg+status,2]
+   612                           
+   613                           
+   614                           ;digital_keypad.c: 7:     TRISB = TRISB | 0x3F;
+   615     06E1  1683               	bsf	3,5	;RP0=1, select bank1
+   616     06E2  1303               	bcf	3,6	;RP1=0, select bank1
+   617     06E3  0806               	movf	6,w	;volatile
+   618     06E4  383F               	iorlw	63
+   619     06E5  0086               	movwf	6	;volatile
+   620     06E6                     l47:
+   621     06E6  0008               	return
+   622     06E7                     __end_of_init_digital_keypad:
+   623                           
+   624                           	psect	text4
+   625     073B                     __ptext4:	
+   626 ;; *************** function _direction_control *****************
+   627 ;; Defined at:
+   628 ;;		line 28 in file "main.c"
+   629 ;; Parameters:    Size  Location     Type
+   630 ;;  pre_key         1    wreg     unsigned char 
+   631 ;; Auto vars:     Size  Location     Type
+   632 ;;  pre_key         1    1[COMMON] unsigned char 
+   633 ;; Return value:  Size  Location     Type
+   634 ;;                  1    wreg      void 
+   635 ;; Registers used:
+   636 ;;		wreg, status,2, status,0
+   637 ;; Tracked objects:
+   638 ;;		On entry : 0/0
+   639 ;;		On exit  : 0/0
+   640 ;;		Unchanged: 0/0
+   641 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   642 ;;      Params:         0       0       0       0       0
+   643 ;;      Locals:         1       0       0       0       0
+   644 ;;      Temps:          1       0       0       0       0
+   645 ;;      Totals:         2       0       0       0       0
+   646 ;;Total ram usage:        2 bytes
+   647 ;; Hardware stack levels used: 1
+   648 ;; This function calls:
+   649 ;;		Nothing
+   650 ;; This function is called by:
+   651 ;;		_main
+   652 ;; This function uses a non-reentrant model
+   653 ;;
+   654                           
+   655     073B                     _direction_control:	
+   656                           ;psect for function _direction_control
+   657                           
+   658                           
+   659                           ;incstack = 0
+   660                           ; Regs used in _direction_control: [wreg+status,2+status,0]
+   661                           ;direction_control@pre_key stored from wreg
+   662     073B  00F7               	movwf	direction_control@pre_key
+   663     073C                     l683:
+   664                           
+   665                           ;main.c: 28:             if(pre_key==0x3E);main.c: 29:             {;main.c: 30:        
+      +                                   if(i<8);main.c: 31:                 {;main.c: 32:                     PORTD = P
+      +                          ORTD |(1<<i++);
+   666     073C  3001               	movlw	1
+   667     073D  07F0               	addwf	direction_control@delay,f
+   668     073E  3000               	movlw	0
+   669     073F  1803               	skipnc
+   670     0740  3001               	movlw	1
+   671     0741  07F1               	addwf	direction_control@delay+1,f
+   672     0742  3000               	movlw	0
+   673     0743  1803               	skipnc
+   674     0744  3001               	movlw	1
+   675     0745  07F2               	addwf	direction_control@delay+2,f
+   676     0746  3000               	movlw	0
+   677     0747  1803               	skipnc
+   678     0748  3001               	movlw	1
+   679     0749  07F3               	addwf	direction_control@delay+3,f
+   680     074A  3011               	movlw	17
+   681     074B  0670               	xorwf	direction_control@delay,w
+   682     074C  3027               	movlw	39
+   683     074D  1903               	skipnz
+   684     074E  0671               	xorwf	direction_control@delay+1,w
+   685     074F  0472               	iorwf	direction_control@delay+2,w
+   686     0750  0473               	iorwf	direction_control@delay+3,w
+   687     0751  1D03               	btfss	3,2
+   688     0752  2F54               	goto	u51
+   689     0753  2F55               	goto	u50
+   690     0754                     u51:
+   691     0754  2FEF               	goto	l40
+   692     0755                     u50:
+   693     0755                     l685:
+   694                           
+   695                           ;main.c: 33:                 };main.c: 34:                 else if(i<16)
+   696     0755  3000               	movlw	0
+   697     0756  00F3               	movwf	direction_control@delay+3
+   698     0757  3000               	movlw	0
+   699     0758  00F2               	movwf	direction_control@delay+2
+   700     0759  3000               	movlw	0
+   701     075A  00F1               	movwf	direction_control@delay+1
+   702     075B  3000               	movlw	0
+   703     075C  00F0               	movwf	direction_control@delay
+   704     075D                     l687:
+   705                           
+   706                           ;main.c: 35:                 {
+   707     075D  303E               	movlw	62
+   708     075E  0677               	xorwf	direction_control@pre_key,w
+   709     075F  1D03               	btfss	3,2
+   710     0760  2F62               	goto	u61
+   711     0761  2F63               	goto	u60
+   712     0762                     u61:
+   713     0762  2FA5               	goto	l705
+   714     0763                     u60:
+   715     0763                     l689:
+   716                           
+   717                           ;main.c: 36:                     PORTD = PORTD &(~(1<<(i++-8)));;main.c: 37:            
+      +                               }
+   718     0763  3000               	movlw	0
+   719     0764  0275               	subwf	direction_control@i+1,w
+   720     0765  3008               	movlw	8
+   721     0766  1903               	skipnz
+   722     0767  0274               	subwf	direction_control@i,w
+   723     0768  1803               	skipnc
+   724     0769  2F6B               	goto	u71
+   725     076A  2F6C               	goto	u70
+   726     076B                     u71:
+   727     076B  2F81               	goto	l695
+   728     076C                     u70:
+   729     076C                     l691:
+   730                           
+   731                           ;main.c: 38:                 if(i==16);main.c: 39:                     i=0;
+   732     076C  3001               	movlw	1
+   733     076D  00F6               	movwf	??_direction_control
+   734     076E  0A74               	incf	direction_control@i,w
+   735     076F  2F72               	goto	u84
+   736     0770                     u85:
+   737     0770  1003               	clrc
+   738     0771  0DF6               	rlf	??_direction_control,f
+   739     0772                     u84:
+   740     0772  3EFF               	addlw	-1
+   741     0773  1D03               	skipz
+   742     0774  2F70               	goto	u85
+   743     0775  0876               	movf	??_direction_control,w
+   744     0776  1283               	bcf	3,5	;RP0=0, select bank0
+   745     0777  1303               	bcf	3,6	;RP1=0, select bank0
+   746     0778  0408               	iorwf	8,w	;volatile
+   747     0779  0088               	movwf	8	;volatile
+   748     077A                     l693:
+   749     077A  3001               	movlw	1
+   750     077B  07F4               	addwf	direction_control@i,f
+   751     077C  1803               	skipnc
+   752     077D  0AF5               	incf	direction_control@i+1,f
+   753     077E  3000               	movlw	0
+   754     077F  07F5               	addwf	direction_control@i+1,f
+   755                           
+   756                           ;main.c: 40:             }
+   757     0780  2F9C               	goto	l701
+   758     0781                     l695:
+   759     0781  3000               	movlw	0
+   760     0782  0275               	subwf	direction_control@i+1,w
+   761     0783  3010               	movlw	16
+   762     0784  1903               	skipnz
+   763     0785  0274               	subwf	direction_control@i,w
+   764     0786  1803               	skipnc
+   765     0787  2F89               	goto	u91
+   766     0788  2F8A               	goto	u90
+   767     0789                     u91:
+   768     0789  2F9C               	goto	l701
+   769     078A                     u90:
+   770     078A                     l697:
+   771                           
+   772                           ;main.c: 42:             {;main.c: 43:                 if(i<8)
+   773     078A  3001               	movlw	1
+   774     078B  00F6               	movwf	??_direction_control
+   775     078C  0874               	movf	direction_control@i,w
+   776     078D  3EF8               	addlw	248
+   777     078E  3E01               	addlw	1
+   778     078F  2F92               	goto	u104
+   779     0790                     u105:
+   780     0790  1003               	clrc
+   781     0791  0DF6               	rlf	??_direction_control,f
+   782     0792                     u104:
+   783     0792  3EFF               	addlw	-1
+   784     0793  1D03               	skipz
+   785     0794  2F90               	goto	u105
+   786     0795  0876               	movf	??_direction_control,w
+   787     0796  3AFF               	xorlw	255
+   788     0797  1283               	bcf	3,5	;RP0=0, select bank0
+   789     0798  1303               	bcf	3,6	;RP1=0, select bank0
+   790     0799  0508               	andwf	8,w	;volatile
+   791     079A  0088               	movwf	8	;volatile
+   792     079B  2F7A               	goto	l693
+   793     079C                     l701:
+   794                           
+   795                           ;main.c: 45:                     PORTD = PORTD | (1<< (7-i++));
+   796     079C  3010               	movlw	16
+   797     079D  0674               	xorwf	direction_control@i,w
+   798     079E  0475               	iorwf	direction_control@i+1,w
+   799     079F  1D03               	btfss	3,2
+   800     07A0  2FA2               	goto	u111
+   801     07A1  2FA3               	goto	u110
+   802     07A2                     u111:
+   803     07A2  2FA5               	goto	l705
+   804     07A3                     u110:
+   805     07A3                     l703:
+   806                           
+   807                           ;main.c: 46:                 }
+   808     07A3  01F4               	clrf	direction_control@i
+   809     07A4  01F5               	clrf	direction_control@i+1
+   810     07A5                     l705:
+   811                           
+   812                           ;main.c: 48:                 {
+   813     07A5  303D               	movlw	61
+   814     07A6  0677               	xorwf	direction_control@pre_key,w
+   815     07A7  1D03               	btfss	3,2
+   816     07A8  2FAA               	goto	u121
+   817     07A9  2FAB               	goto	u120
+   818     07AA                     u121:
+   819     07AA  2FEF               	goto	l40
+   820     07AB                     u120:
+   821     07AB                     l707:
+   822                           
+   823                           ;main.c: 49:                     PORTD = PORTD & (~(1<<(15-i++)));;main.c: 50:          
+      +                                 }
+   824     07AB  3000               	movlw	0
+   825     07AC  0275               	subwf	direction_control@i+1,w
+   826     07AD  3008               	movlw	8
+   827     07AE  1903               	skipnz
+   828     07AF  0274               	subwf	direction_control@i,w
+   829     07B0  1803               	skipnc
+   830     07B1  2FB3               	goto	u131
+   831     07B2  2FB4               	goto	u130
+   832     07B3                     u131:
+   833     07B3  2FCB               	goto	l713
+   834     07B4                     u130:
+   835     07B4                     l709:
+   836                           
+   837                           ;main.c: 51:                 if(i==16);main.c: 52:                     i=0;
+   838     07B4  3001               	movlw	1
+   839     07B5  00F6               	movwf	??_direction_control
+   840     07B6  0874               	movf	direction_control@i,w
+   841     07B7  3C07               	sublw	7
+   842     07B8  3E01               	addlw	1
+   843     07B9  2FBC               	goto	u144
+   844     07BA                     u145:
+   845     07BA  1003               	clrc
+   846     07BB  0DF6               	rlf	??_direction_control,f
+   847     07BC                     u144:
+   848     07BC  3EFF               	addlw	-1
+   849     07BD  1D03               	skipz
+   850     07BE  2FBA               	goto	u145
+   851     07BF  0876               	movf	??_direction_control,w
+   852     07C0  1283               	bcf	3,5	;RP0=0, select bank0
+   853     07C1  1303               	bcf	3,6	;RP1=0, select bank0
+   854     07C2  0408               	iorwf	8,w	;volatile
+   855     07C3  0088               	movwf	8	;volatile
+   856     07C4                     l711:
+   857     07C4  3001               	movlw	1
+   858     07C5  07F4               	addwf	direction_control@i,f
+   859     07C6  1803               	skipnc
+   860     07C7  0AF5               	incf	direction_control@i+1,f
+   861     07C8  3000               	movlw	0
+   862     07C9  07F5               	addwf	direction_control@i+1,f
+   863                           
+   864                           ;main.c: 53:             }
+   865     07CA  2FE6               	goto	l719
+   866     07CB                     l713:
+   867     07CB  3000               	movlw	0
+   868     07CC  0275               	subwf	direction_control@i+1,w
+   869     07CD  3010               	movlw	16
+   870     07CE  1903               	skipnz
+   871     07CF  0274               	subwf	direction_control@i,w
+   872     07D0  1803               	skipnc
+   873     07D1  2FD3               	goto	u151
+   874     07D2  2FD4               	goto	u150
+   875     07D3                     u151:
+   876     07D3  2FE6               	goto	l719
+   877     07D4                     u150:
+   878     07D4                     l715:
+   879                           
+   880                           ;main.c: 55:     }
+   881     07D4  3001               	movlw	1
+   882     07D5  00F6               	movwf	??_direction_control
+   883     07D6  0874               	movf	direction_control@i,w
+   884     07D7  3C0F               	sublw	15
+   885     07D8  3E01               	addlw	1
+   886     07D9  2FDC               	goto	u164
+   887     07DA                     u165:
+   888     07DA  1003               	clrc
+   889     07DB  0DF6               	rlf	??_direction_control,f
+   890     07DC                     u164:
+   891     07DC  3EFF               	addlw	-1
+   892     07DD  1D03               	skipz
+   893     07DE  2FDA               	goto	u165
+   894     07DF  0876               	movf	??_direction_control,w
+   895     07E0  3AFF               	xorlw	255
+   896     07E1  1283               	bcf	3,5	;RP0=0, select bank0
+   897     07E2  1303               	bcf	3,6	;RP1=0, select bank0
+   898     07E3  0508               	andwf	8,w	;volatile
+   899     07E4  0088               	movwf	8	;volatile
+   900     07E5  2FC4               	goto	l711
+   901     07E6                     l719:
+   902     07E6  3010               	movlw	16
+   903     07E7  0674               	xorwf	direction_control@i,w
+   904     07E8  0475               	iorwf	direction_control@i+1,w
+   905     07E9  1D03               	btfss	3,2
+   906     07EA  2FEC               	goto	u171
+   907     07EB  2FED               	goto	u170
+   908     07EC                     u171:
+   909     07EC  2FEF               	goto	l40
+   910     07ED                     u170:
+   911     07ED                     l721:
+   912     07ED  01F4               	clrf	direction_control@i
+   913     07EE  01F5               	clrf	direction_control@i+1
+   914     07EF                     l40:
+   915     07EF  0008               	return
+   916     07F0                     __end_of_direction_control:
+   917     007E                     btemp	set	126	;btemp
+   918     007E                     wtemp0	set	126
+   919                           
+   920                           	psect	config
+   921                           
+   922                           ;Config register CONFIG @ 0x2007
+   923                           ;	Oscillator Selection bits
+   924                           ;	FOSC = 0x3, unprogrammed default
+   925                           ;	Watchdog Timer Enable bit
+   926                           ;	WDTE = OFF, WDT disabled
+   927                           ;	Power-up Timer Enable bit
+   928                           ;	PWRTE = 0x1, unprogrammed default
+   929                           ;	Brown-out Reset Enable bit
+   930                           ;	BOREN = 0x1, unprogrammed default
+   931                           ;	Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit
+   932                           ;	LVP = 0x1, unprogrammed default
+   933                           ;	Data EEPROM Memory Code Protection bit
+   934                           ;	CPD = 0x1, unprogrammed default
+   935                           ;	Flash Program Memory Write Enable bits
+   936                           ;	WRT = 0x3, unprogrammed default
+   937                           ;	In-Circuit Debugger Mode bit
+   938                           ;	DEBUG = 0x1, unprogrammed default
+   939                           ;	Flash Program Memory Code Protection bit
+   940                           ;	CP = 0x1, unprogrammed default
+   941     2007                     	org	8199
+   942     2007  3FFB               	dw	16379
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        1
+    BSS         6
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      4      11
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_direction_control
+    _main->_read_digital_keypad
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0      90
+                                              2 COMMON     2     2      0
+                  _direction_control
+                        _init_config
+                _read_digital_keypad
+ ---------------------------------------------------------------------------------
+ (1) _read_digital_keypad                                  2     2      0      15
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _init_config                                          0     0      0       0
+                _init_digital_keypad
+ ---------------------------------------------------------------------------------
+ (2) _init_digital_keypad                                  0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _direction_control                                    2     2      0      30
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _direction_control
+   _init_config
+     _init_digital_keypad
+   _read_digital_keypad
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0       0       5        0.0%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      4       B       1       78.6%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0       B      12        0.0%
+ABS                  0      0       B       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                   Mon Mar 10 18:56:19 2025
+
+         direction_control@i 0074                           l13 06F2                           l40 07EF  
+                         l18 06F8                           l53 073A                           l47 06E6  
+                         u10 0717                           u11 0716                           u20 0727  
+                         u21 0726                           u30 072C                           u31 072B  
+                         u40 0737                           u41 0736                           u50 0755  
+                         u51 0754                           u60 0763                           u61 0762  
+                         u70 076C                           u71 076B                           u90 078A  
+                         u91 0789                           u84 0772                           u85 0770  
+                        l701 079C                          l711 07C4                          l703 07A3  
+                        l721 07ED                          l713 07CB                          l705 07A5  
+                        l715 07D4                          l707 07AB                          l651 06E7  
+                        l723 06F3                          l709 07B4                          l653 06ED  
+                        l725 06FF                          l719 07E6                          l663 071C  
+                        l655 0712                          l727 0705                          l649 06E1  
+                        l665 0727                          l657 0717                          l729 0707  
+                        l691 076C                          l683 073C                          l667 072C  
+                        l675 072E                          l693 077A                          l685 0755  
+                        l677 0737                          l695 0781                          l687 075D  
+                        l679 0739                          l697 078A                          l689 0763  
+                        u110 07A3                          u111 07A2                          u120 07AB  
+                        u104 0792                          u121 07AA                          u105 0790  
+                        u130 07B4                          u131 07B3                          u150 07D4  
+                        u151 07D3                          u144 07BC                          u145 07BA  
+                        u170 07ED                          u171 07EC                          u164 07DC  
+                        u180 0705                          u165 07DA                          u181 0704  
+      ??_read_digital_keypad 0076                         _main 06F3                  main@pre_key 0078  
+                       btemp 007E                         start 0000                        ?_main 0076  
+               ?_init_config 0076                        _PORTB 0006                        _PORTD 0008  
+                      _TRISB 0086                        _TRISD 0088                        status 0003  
+                      wtemp0 007E              __initialization 07F0                 __end_of_main 0711  
+                     ??_main 0078       direction_control@delay 0070  __end_of_init_digital_keypad 06E7  
+               __pdataCOMMON 007A      __end_of__initialization 07FC               __pcstackCOMMON 0076  
+                 __pmaintext 06F3  __end_of_read_digital_keypad 073B                      __ptext1 0711  
+                    __ptext2 06E7                      __ptext3 06E1                      __ptext4 073B  
+                    main@key 0079         end_of_initialization 07FC                __pidataCOMMON 06E0  
+        start_initialization 07F0                ??_init_config 0076                  __pbssCOMMON 0070  
+                  ___latbits 0002          __end_of_init_config 06F3     direction_control@pre_key 0077  
+        _init_digital_keypad 06E1         ?_init_digital_keypad 0076                  _init_config 06E7  
+          _direction_control 073B           ?_direction_control 0076      read_digital_keypad@mode 0077  
+    read_digital_keypad@once 007A          ??_direction_control 0076        ??_init_digital_keypad 0076  
+  __end_of_direction_control 07F0          _read_digital_keypad 0711         ?_read_digital_keypad 0076  
