@@ -1,0 +1,61 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"12 D:\Demo_Files\Capture_pic.X\capture.c
+[v _init_capture init_capture `(v  1 e 1 0 ]
+"12 D:\Demo_Files\Capture_pic.X\isr.c
+[v _isr isr `II(v  1 e 1 0 ]
+"15 D:\Demo_Files\Capture_pic.X\main.c
+[v _init_config init_config `(v  1 s 1 init_config ]
+"23
+[v _main main `(v  1 e 1 0 ]
+"216 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc/pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"278
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"454
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"655
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"885
+[v _CCPR1 CCPR1 `VEus  1 e 2 @21 ]
+"906
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1618
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+"2437
+[v _CCP1IF CCP1IF `VEb  1 e 0 @98 ]
+"23 D:\Demo_Files\Capture_pic.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"30
+} 0
+"15
+[v _init_config init_config `(v  1 s 1 init_config ]
+{
+"22
+} 0
+"12 D:\Demo_Files\Capture_pic.X\capture.c
+[v _init_capture init_capture `(v  1 e 1 0 ]
+{
+"19
+} 0
+"12 D:\Demo_Files\Capture_pic.X\isr.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"19
+} 0
